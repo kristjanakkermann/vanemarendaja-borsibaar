@@ -72,6 +72,8 @@ export default function Inventory() {
     description: "",
     categoryId: "",
     currentPrice: "",
+    minPrice: "",
+    maxPrice: "",
     initialQuantity: "",
     notes: "",
   });
@@ -144,6 +146,8 @@ export default function Inventory() {
           description: productForm.description,
           categoryId: parseInt(productForm.categoryId),
           currentPrice: parseFloat(productForm.currentPrice),
+          minPrice: parseFloat(productForm.minPrice),
+          maxPrice: parseFloat(productForm.maxPrice),
         }),
       });
 
@@ -531,6 +535,46 @@ export default function Inventory() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1">
+                Min price *
+              </label>
+              <Input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  value={productForm.minPrice}
+                  onChange={(e) =>
+                      setProductForm({
+                        ...productForm,
+                        minPrice: e.target.value,
+                      })
+                  }
+                  className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="0.00"
+                  required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">
+                Max price *
+              </label>
+              <Input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  value={productForm.maxPrice}
+                  onChange={(e) =>
+                      setProductForm({
+                        ...productForm,
+                        maxPrice: e.target.value,
+                      })
+                  }
+                  className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="0.00"
+                  required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-1">
                 Description
               </label>
               <Textarea
@@ -587,7 +631,9 @@ export default function Inventory() {
               disabled={
                 !productForm.name ||
                 !productForm.categoryId ||
-                !productForm.currentPrice
+                !productForm.currentPrice ||
+                  !productForm.minPrice ||
+                !productForm.maxPrice
               }
               className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-medium disabled:bg-gray-700 disabled:cursor-not-allowed"
             >
