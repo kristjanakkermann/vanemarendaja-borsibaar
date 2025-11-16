@@ -2,13 +2,16 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# Accept build argument for public backend URL
+ARG NEXT_PUBLIC_BACKEND_URL
+ENV NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+
 # Install dependencies
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
 # Copy source and build
 COPY frontend/ .
-# If you rely on build-time env vars, ensure they are present in frontend/.env.production before build
 # Next.js picks NEXT_PUBLIC_* client vars at build time
 RUN npm run build
 
