@@ -252,7 +252,7 @@ export default function POSStation() {
   }
 
   return (
-    <div className="min-h-screen bg-background p-6 pb-24 lg:pb-6">
+    <div className="min-h-screen bg-background p-6 pb-24 lg:pb-6 w-full">
       <div className="max-w-full mx-auto">
         <POSHeader
           station={station}

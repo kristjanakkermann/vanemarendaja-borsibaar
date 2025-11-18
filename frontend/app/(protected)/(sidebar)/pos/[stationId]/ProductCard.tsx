@@ -27,7 +27,7 @@ export function ProductCard({
 
   return (
     <div
-      className="bg-card p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow cursor-pointer"
+      className="bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer border-1 border-[color-mix(in oklab, var(--ring) 50%, transparent)]"
       onClick={() => onAddToCart(product)}
     >
       <div className="flex items-start justify-between mb-2">

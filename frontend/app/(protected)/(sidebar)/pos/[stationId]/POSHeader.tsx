@@ -31,7 +31,7 @@ export function POSHeader({
   const router = useRouter();
 
   return (
-    <div className="rounded-lg bg-card p-6 shadow-sm mb-6">
+    <div className="rounded-lg bg-card p-6 shadow-sm mb-6 border-1 border-[color-mix(in oklab, var(--ring) 50%, transparent)]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <Button

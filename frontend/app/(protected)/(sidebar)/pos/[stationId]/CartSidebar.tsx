@@ -39,7 +39,7 @@ export function CartSidebar({
     <>
       {/* Compact sticky cart bar for smaller screens */}
       {cart.length > 0 && (
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-gray-700 shadow-lg">
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-card border-1 border-[color-mix(in oklab, var(--ring) 50%, transparent)] shadow-lg">
           <div className="max-w-full mx-auto px-4 py-3">
             <div className="flex items-center justify-between gap-4">
               <div
@@ -77,7 +77,7 @@ export function CartSidebar({
       {/* Full cart sidebar */}
       <div
         id="cart-sidebar"
-        className="w-full lg:w-80 bg-card rounded-lg shadow-sm p-6 lg:sticky lg:top-6 lg:self-start"
+        className="w-full lg:w-80 bg-card rounded-lg shadow-sm p-6 lg:sticky lg:top-6 lg:self-start border-1 border-[color-mix(in oklab, var(--ring) 50%, transparent)]"
       >
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-100">Cart</h2>
